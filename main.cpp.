@@ -24,7 +24,7 @@ int main(void) {
         BeginDrawing();
             ClearBackground(RAYWHITE);
             // Dibujar la pelota
-            DrawCircleV(ballPosition, (float)ballRadius, MAROON);
+            DrawCircleV(ballPosition, (float)ballRadius, BLUE);
             DrawText("Moviendo la pelota con Raylib", 10, 10, 20, DARKGRAY);
         EndDrawing();
     }
