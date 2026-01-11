@@ -1,0 +1,34 @@
+#include <raylib.h>
+
+int main(void) {
+    const int screenWidth = 800;
+    const int screenHeight = 450;
+
+    InitWindow(screenWidth, screenHeight, "Ejercicio 1: Pelota Rebotando - Moreira Angie");
+
+    Vector2 ballPosition = { (float)screenWidth/2, (float)screenHeight/2 };
+    Vector2 ballSpeed = { 5.0f, 4.0f };
+    int ballRadius = 20;
+
+    SetTargetFPS(60);
+
+    while (!WindowShouldClose()) {
+        // Actualización de posición
+        ballPosition.x += ballSpeed.x;
+        ballPosition.y += ballSpeed.y;
+
+        // Rebote en bordes
+        if ((ballPosition.x >= (screenWidth - ballRadius)) || (ballPosition.x <= ballRadius)) ballSpeed.x *= -1.0f;
+        if ((ballPosition.y >= (screenHeight - ballRadius)) || (ballPosition.y <= ballRadius)) ballSpeed.y *= -1.0f;
+
+        BeginDrawing();
+            ClearBackground(RAYWHITE);
+            // Dibujar la pelota
+            DrawCircleV(ballPosition, (float)ballRadius, MAROON);
+            DrawText("Moviendo la pelota con Raylib", 10, 10, 20, DARKGRAY);
+        EndDrawing();
+    }
+
+    CloseWindow();
+    return 0;
+}
