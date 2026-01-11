@@ -4,7 +4,7 @@ int main(void) {
     const int screenWidth = 800;
     const int screenHeight = 450;
 
-    InitWindow(screenWidth, screenHeight, "Ejercicio 1: Pelota Rebotando - Moreira Angie");
+    InitWindow(screenWidth, screenHeight, "Ejercicio 1: Pelota Rebotando - Angie Moreira");
 
     Vector2 ballPosition = { (float)screenWidth/2, (float)screenHeight/2 };
     Vector2 ballSpeed = { 10.0f, 8.0f };
